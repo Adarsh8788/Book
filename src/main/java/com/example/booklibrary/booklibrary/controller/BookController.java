@@ -1,6 +1,6 @@
 package com.example.booklibrary.booklibrary.controller;
 
-import java.util.List;
+import java.util.List; 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,19 +24,19 @@ public class BookController {
     @Autowired
     private BookServiceImpl bookServiceImpl;
 
-    @PostMapping("/book")
-    public ResponseEntity<Book> addBook(@RequestBody Book book) {
-        Book savedBook = bookServiceImpl.addBook(book);
-        return new ResponseEntity<>(savedBook, HttpStatus.CREATED);
-        
-    }
+	/*
+	 * @PostMapping("/book") public ResponseEntity<Book> addBook(@RequestBody Book
+	 * book) { Book savedBook = bookServiceImpl.addBook(book); return new
+	 * ResponseEntity<>(savedBook, HttpStatus.CREATED);
+	 * 
+	 * }
+	 */
     @PostMapping("/books")
     public ResponseEntity<List<Book>> addBooks(@RequestBody List<Book>book) {
        List<Book> savedBook = bookServiceImpl.addBooks(book);
         return new ResponseEntity<>(savedBook, HttpStatus.CREATED);
     }
-    
-    
+   
     @DeleteMapping("/books/{id}")
     public ResponseEntity<HttpStatus> deleteBookById(@PathVariable("id") Long id) {
         bookServiceImpl.deleteBook(id);
@@ -72,5 +72,10 @@ public class BookController {
         List<Book> books = (List<Book>) bookServiceImpl.getAllBooks();
         return new ResponseEntity<>(books, HttpStatus.OK);
     }
+
+	public ResponseEntity<Book> update(Long id, Book updatedBook) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
 

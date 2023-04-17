@@ -1,7 +1,7 @@
 package com.example.booklibrary.booklibrary.service;
 
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.List;
 
 import org.hibernate.query.NativeQuery.ReturnableResultNode;
@@ -61,5 +61,11 @@ public class BookServiceImpl implements BookService{
         bookRepository.deleteById(id);
         logger.info("Deleted book with ID {} from the database", id);
     }
+
+	@Override
+	public Object deleteBookById(long l) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
 

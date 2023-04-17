@@ -18,7 +18,10 @@ public class Book {
 
     private String publisher;
 
-    public Long getId() {
+    public Book() {
+		// TODO Auto-generated constructor stub
+	}
+	public Long getId() {
         return id;
     }
 

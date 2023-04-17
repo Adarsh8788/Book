@@ -9,5 +9,5 @@ public interface BookService {
     Book getBookById(Long id);
     Book addBook(Book book);
     Book update(Book book);
-    void deleteBook(Long id);
+	Object deleteBookById(long l);
 }
